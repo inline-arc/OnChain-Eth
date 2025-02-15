@@ -17,10 +17,11 @@ import {
   LogOut, 
   Wallet
 } from 'lucide-react'
+import WalletUserBase from '../WallerUser'
 
 const menuItems = [
   { icon: Home, label: 'Home', path: '/' },
-  { icon: Wallet, label: 'My Bank', path: '/bank' },
+  { icon: Wallet, label: 'Invest', path: '/bank' },
   { icon: ArrowLeftRight, label: 'Transaction', path: '/transaction' },
   { icon: ArrowLeftRight, label: 'Swap', path: '/swap' },
   { icon: DollarSign, label: 'Fund', path: '/fund' },
@@ -38,9 +39,10 @@ export default function EnhancedSidebar() {
   const [activeItem, setActiveItem] = React.useState<string | null>(null)
 
   return (
-    <div className="bg-slate-200 text-black w-64 h-screen fixed left-0 top-0 flex flex-col shadow-lg border-r border-gray-200">
+    <div className="bg-slate-200 text-black w-64 h-screen left-0 top-0 flex flex-col shadow-lg border-r-2 border-slate-500 absolute z-50">
       <div className="p-4 flex justify-center items-center">
-        <div className="h-16 w-16 bg-gray-200 rounded-lg" />
+        <div className="h-16 w-16 bg-gray-800 rounded-lg" />
+        <WalletUserBase/>
       </div>
       <div className="flex-1 px-4 overflow-y-auto">
         <nav>
@@ -60,7 +62,7 @@ export default function EnhancedSidebar() {
         </nav>
       </div>
       <div className="p-4">
-        <button className="w-full flex items-center gap-3 py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors font-medium">
+        <button className="w-full flex items-center gap-3 py-4 px-3 rounded-lg hover:bg-gray-100 transition-colors font-medium">
           <LogOut className="h-5 w-5" />
           <span>Disconnect</span>
         </button>
